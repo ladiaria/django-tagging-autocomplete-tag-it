@@ -1,3 +1,15 @@
+django-tagging-autocomplete-taggit
+
+fork of django-tagging-autocomplete that works with a modified version jQuery UI Tag-it
+
+for demos see: http://aehlke.github.com/tag-it/
+
+supports max_length of tags and maximum tags
+
+THE README FILE NEEDS TO BE UPDATED.
+DON'T TRUST THIS AT THE MOMENT, WATCH THE CODE DIRECTLY
+
+
 *** django-tagging-autocomplete ***
 
 This Django reusable app extends djang-tagging and provides you with a form widget supporting javascript autocompletion of tags.
@@ -35,4 +47,4 @@ from tagging.forms import TagField
 from tagging_autocomplete.widgets import TagAutocomplete
 
 class SomeForm(forms.Form):
-    tags = TagField(widget=TagAutocomplete())
+    tags = TagField(widget=TagAutocomplete(max_tags=5))

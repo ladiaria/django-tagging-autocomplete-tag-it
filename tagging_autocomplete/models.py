@@ -9,12 +9,17 @@ class TagAutocompleteField(TagField):
     """
     TagField with autocomplete widget
     """
+    
+    def __init__(self, max_tags=False, *args, **kwargs):
+        self.max_tags = max_tags
+        super(TagAutocompleteField, self).__init__(*args, **kwargs)
+    
     def formfield(self, **kwargs):
-        defaults = {'widget': TagAutocomplete}
+        defaults = {'widget': TagAutocomplete(max_tags=self.max_tags)}
         defaults.update(kwargs)
 
         # As an ugly hack, we override the admin widget
         if defaults['widget'] == AdminTextInputWidget:
-            defaults['widget'] = TagAutocomplete
+            defaults['widget'] = TagAutocomplete(max_tags=self.max_tags)
 
         return super(TagAutocompleteField, self).formfield(**defaults)
