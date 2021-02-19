@@ -1,5 +1,6 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import *
+from tagging_autocomplete_tagit.views import list_tags
 
-urlpatterns = patterns('tagging_autocomplete_tagit.views',
-    url(r'^list$', 'list_tags', name='tagging_autocomplete_tagit-list'),
-)
+urlpatterns = [
+    url(r'^list$', list_tags, name='tagging_autocomplete_tagit-list'),
+]
