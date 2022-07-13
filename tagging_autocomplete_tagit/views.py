@@ -8,4 +8,4 @@ def list_tags(request):
 	except MultiValueDictKeyError:
 		tags = []
 
-	return JsonResponse([x.encode('utf-8') for x in tags], safe=False)
+	return JsonResponse([x.encode('utf-8').decode() for x in tags], safe=False)
