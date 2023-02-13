@@ -9,7 +9,7 @@ class TagAutocompleteTagIt(TextInput):
         self.max_tags = max_tags if max_tags else getattr(settings, 'TAGGING_AUTOCOMPLETE_MAX_TAGS', 20)
         super(TagAutocompleteTagIt, self).__init__(*args, **kwargs)
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, *args, **kwargs):
         """Render HTML code"""
         # django-tagging
         case_sensitive = 'true' if not getattr(settings, 'FORCE_LOWERCASE_TAGS', False) else 'false'
