@@ -4,7 +4,7 @@ if(!jQuery) var jQuery = django.jQuery;
 window.django_autocomplete_max_reached = false;
 function init_jQueryTagit(options){
     jQuery('#'+options.objectId).tagit({
-        singleFieldDelimiter: ' ',
+        singleFieldDelimiter: ', ',
         fieldName         : options.fieldName,
         tagSource         : function(request, response){
             jQuery.getJSON(options.sourceUrl, {
@@ -21,6 +21,7 @@ function init_jQueryTagit(options){
         onTagAdded  : options.onTagAdded,
         onTagRemoved: options.onTagRemoved,
         onTagClicked: options.onTagClicked,
-        onMaxTagsExceeded: options.onMaxTagsExceeded
+        onMaxTagsExceeded: options.onMaxTagsExceeded,
+        allowSpaces: true,
     });
 }
