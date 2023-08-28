@@ -1,2 +1,2 @@
-recursive-include utopia_cms_ladiaria/static *
+recursive-include tagging_autocomplete_tagit/static *
 
