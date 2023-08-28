@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
+import os
 from setuptools import setup, find_packages
  
 long_description = open('README.markdown').read()
- 
+
+# allow setup.py to be run from any path
+os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
+
 setup(
     name='django-tagging-autocomplete',
     version='0.3.1',
@@ -21,7 +25,7 @@ setup(
         'Programming Language :: Python',
         'Framework :: Django',
     ],
-    zip_safe=False,
+    #zip_safe=False,
     #package_data={},
     #test_suite='tagging_autocomplete.tests.runtests.runtests'
 ) 
